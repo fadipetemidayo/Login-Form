@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- ICON CDN FONT AWESOME -->
+   <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="form">
+        <span class="form_title">Login</span>
+        <form class="form_content" method="post">
+            <div class="form_field">
+                <i class="form_icon fa fa-user"></i>
+                <input type="text" class="form_input" placeholder="Username" required>
+            </div>
+
+            <div class="form_field">
+                <i class="form_icon fa fa-lock"></i>
+                <input type="password" class="form_input form_input--pass" placeholder="Password" required>
+               
+            </div>
+
+            <div class="form_forgot-pass"><a href="#">Forgot Password?</a></div>
+            <input type="submit" value="Login" class="form_btn">
+            <div class="form_signup">Not a member?<a href="#">Signup</a></div>
+
+        </form>
+    </div>
+
+  <!--   JS -->
+  <script>
+    const hideIcon = document.querySelector('.form_icon--hide');
+    const passField = document.querySelector('.form_icon--pass');
+
+    hideIcon.addEventListener('click' , ()=>{
+        hideIcon.classList.toggle('fa-eye-slash');
+        hideIcon.classList.toggle('fa-eye');
+        if(hideIcon.classList.contains('fa-eye')){
+            passField.type = 'text';
+        }else{
+            passField.type = 'password';
+        }
+    })
+  </script>
+</body>
+</html>
